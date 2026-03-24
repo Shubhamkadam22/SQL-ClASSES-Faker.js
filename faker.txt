@@ -1,0 +1,83 @@
+1. What is Faker.js?
+
+  Faker.js is a JavaScript library used to generate fake (dummy) data like:
+
+  Names
+   Emails
+   Addresses
+   Phone numbers
+   Company names
+
+
+
+Used for:
+
+   Testing
+   Database seeding
+   Development
+
+
+2. Installation
+   
+   npm install @faker-js/faker
+
+3. Import Faker
+   
+   import { faker } from '@faker-js/faker';
+
+4. Generate Basic Data
+
+   faker.person.fullName();     // Random name
+   faker.internet.email();      // Random email
+   faker.phone.number();        // Phone number
+   faker.location.city();       // City
+   faker.company.name();        // Company name
+
+5. Generate Random Numbers
+  
+  faker.number.int({ min: 1, max: 100 });
+
+6. Generate User Object
+
+ const user = {
+   id: faker.string.uuid(),
+   name: faker.person.fullName(),
+   email: faker.internet.email(),
+   age: faker.number.int({ min: 18, max: 30 })
+};
+
+7. Generate Multiple Records
+
+const users = [];
+for (let i = 0; i < 5; i++) {
+  users.push({
+    name: faker.person.fullName(),
+    email: faker.internet.email()
+  });
+ }
+
+8. Useful Categories
+
+  faker.person → names
+  faker.internet → emails, usernames
+  faker.location → address
+  faker.company → company data
+  faker.number → numbers
+  aker.date → dates
+
+9. Example (Database Seeding)
+
+for (let i = 0; i < 10; i++) {
+  console.log({
+    name: faker.person.fullName(),
+    email: faker.internet.email()
+  });
+}
+
+
+10. Why Use Faker?
+  
+  Saves time
+  Generates realistic data
+  Useful for testing APIs & databases
+  No need to manually create data
